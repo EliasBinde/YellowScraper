@@ -1,0 +1,26 @@
+{
+  "name": "YellowScraper",
+  "description": "Grab all the data you need from YP",
+  "version": "2.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "/images/ys-icon-16.png",
+    "32": "/images/ys-icon-32.png",
+    "64": "/images/ys-icon-64.png",
+    "128": "/images/ys-icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "YellowScraper"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_idle",
+      "js": ["content.js"],
+      "matches": ["https://*/*", "http://*/*"]
+    }
+  ],
+
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": ["https://*/*", "http://*/*"]
+}
